@@ -127,21 +127,11 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>8.0.0</version>
                 <configuration>
-                    <url>jdbc:mysql://localhost:3307/backdb</url>
-                    <user>root</user>
-                    <password>root</password>
                     <locations>
                         <location>filesystem:src/main/resources/db/migration</location>
                     </locations>
                 </configuration>
             </plugin>
-
-
-
-
-
-
-
 
 
         </plugins>
