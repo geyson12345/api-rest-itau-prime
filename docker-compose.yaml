@@ -1,9 +1,20 @@
 services:
+#  api:
+#    container_name: start_app_itau
+#    build: .
+#    profiles: ["app"]
+#    restart: unless-stopped
+#    ports:
+#      - '8080:8080'
+#    depends_on:
+#      - db
+#    networks:
+#      - net_itau
   db:
       image: mysql:8.0
-      container_name: adm_db_itau
+      container_name: db_itau
       ports:
-        - '3307:3306'
+        - '3306:3306'
       restart: always
       environment:
         MYSQL_ROOT_PASSWORD: root
@@ -11,15 +22,15 @@ services:
         MYSQL_PASSWORD: root
       networks:
         - net_itau
-  rabbitmq:
-      image: rabbitmq:management-alpine
-      ports:
-        - '5672:5672'
-        - '15672:15672'
-      environment:
-        RABBITMQ_DEFAULT_USER: guest
-        RABBITMQ_DEFAULT_PASS: guest
-      networks:
-        - net_itau
+#  rabbitmq:
+#      image: rabbitmq:management-alpine
+#      ports:
+#        - '5672:5672'
+#        - '15672:15672'
+#      environment:
+#        RABBITMQ_DEFAULT_USER: guest
+#        RABBITMQ_DEFAULT_PASS: guest
+#      networks:
+#        - net_itau
 networks:
     net_itau:
