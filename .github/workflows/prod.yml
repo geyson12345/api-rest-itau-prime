@@ -9,3 +9,20 @@ jobs:
         steps:
                - name: Checkout code
                  uses: actions/checkout@v3
+
+               - name: Setup Java
+                 uses: actions/setup-java@v3
+                 with:
+                    distribution: 'temurin'
+                    java-version: '17'
+               - name: Build do projeto
+                 run: mvn clean install -DskipTests
+
+               - name: Login no docker Hub
+                 run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
+               - name: Build docker image
+                 run: docker build -t  geyson12345/deploy_itau .
+               - name: Push image docker
+                 run: docker push geyson12345/deploy_itau
+
+
