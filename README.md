@@ -1,2 +1,2 @@
 # Api Rest da banco Itaú
-## Estará disponivel na docker hub a image e depois deploy na AWS.
+## Já se encontrar disponivel no ECR  a image e depois deploy na AWS ECS.
