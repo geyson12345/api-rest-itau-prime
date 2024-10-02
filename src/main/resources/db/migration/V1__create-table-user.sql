@@ -4,9 +4,4 @@ create table tb_user (
                          email varchar(255),
                          nome varchar(255),
                          senha varchar(255),
-                         primary key (id,email)
-);
-
-
-
-
+                         primary key (id,email);
