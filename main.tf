@@ -5,7 +5,17 @@ terraform {
       version = "~> 4.0"  # Certifique-se de usar uma versão que suporte cpu_architecture
     }
   }
+
+  backend "s3" {
+    bucket="bktaws-geyson"
+    key="terraform.tfstate"
+    region="us-east-1"
+
+  }
 }
+
+
+
 
 provider "aws" {
   region = "us-east-1"  # Altere para sua região preferida
